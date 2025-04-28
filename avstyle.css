@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+}
+body {
+    background-color: #FBF7BA;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #c5352b, #9D1F15);
+    padding: 15px 25px;
+    font-size: 24px;
+    color: #FBF7BA;
+    z-index: 1000;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.loginbtn {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #FBF7BA;
+}
+
+#sidebar {
+    background-color: #9D1F15;
+    width: 280px;
+    height: 543px;
+    font-size: 20px;
+    justify-items: center;
+    position: fixed;
+    left: -300px; /* hidden by default */
+    top: 54px;
+    transition: left 0.3s ease;
+}
+#sidebar.active {
+    left: 0; /* show the sidebar */
+}
+.logo-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin: 30px 0 30px 0;
+}
+.sidebar-nav ul li{
+    list-style: none;
+    width: 180px;
+    margin-left: -50px;
+    /* text-align: center; */
+    /* justify-items: left; */
+}
+.sidebar-nav ul li:hover a {
+    background-color: #FBF7BA;
+    color: #9D1F15;
+    transition: 0.5s ease;
+}
+.sidebar-nav a {
+    color: #FBF7BA;
+    text-decoration: none;
+    display: block;
+    padding: 12px;
+}
+.sidebar-nav i {margin: 0 10px 0 0;}
+#logout{
+    margin-top: 30px;
+    background-color: #c5352b;
+    text-align: center;
+}
+
+#manage-users, #manage-menu, #orders, #reservations, #reviews {
+    display: none; /* hide all sections by default */
+}
+#dashboard h1, #manage-users h1, #manage-menu h1, #orders h1, #reservations h1, #reviews h1{
+    color: #9D1F15;
+    border-bottom: 1px solid #9D1F15;
+    padding: 15px 20px;
+}
+
+/* Dashboard components */
+.dashboard-content {
+    background-color: rgba(178, 178, 178, 0.863);
+    width: 92%;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    line-height: 1.5;
+    margin: 20px auto;
+    color: #9D1F15;
+    font-family: sans-serif;
+    font-size: 17px;
+}
+.home-content {
+    display: flex;
+    margin: 30px 0 0 30px;
+    gap: 30px;
+    font-family: sans-serif;
+}
+.card {
+    background-color: rgba(178, 178, 178, 0.863);
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    line-height: 1.4;
+}
+
+/* Manage Users components */
+.userlist {
+    width: 95%;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.userlist h2 {
+    font-size: 25px;
+}
+.mu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mu-btns {
+    display: flex;
+    gap: 20px;
+}
+.mu-btns button:hover {
+    background-color: #c5352b;
+    color: #FBF7BA;
+    transition: 0.5s ease;
+}
+.userlist button {
+    background-color: #9D1F15;
+    color: #FBF7BA;
+    border: none;
+    padding: 8px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.search-con {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    padding: 8px 10px;
+    border-radius: 30px;
+    width: 310px;
+    font-size: 18px;
+}
+.search-con input {
+    width: 300px;
+    outline: none;
+    border: none;
+    transition: 0.8s;
+    background: transparent;
+}
+.userlist table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px auto;
+    font-size: 18px;
+}
+.userlist thead {
+    background-color: #9D1F15;
+    color: white;
+}
+.userlist th {
+    padding: 10px;
+    border: 1.4px solid #FBF7BA;
+}
+.userlist td {
+    padding: 10px;
+    text-align: center;
+    border: 1.4px solid #9D1F15;
+}
+
+/* Manage Menu components */
+.mm-header {
+    display: flex; 
+    gap: 20px;
+    align-items: center;
+    margin: 20px auto;
+    width: 95%;
+    justify-content: end;
+}
+.mm-header button {
+    background-color: #9D1F15;
+    color: #FBF7BA;
+    border: none;
+    padding: 8px 20px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.mm-header select {
+    padding: 8px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #9D1F15;
+    color: #FBF7BA;
+}
+#appetizers h2, #morningplates h2, #house-fav h2, #pastas h2, #sweets h2, #beverages h2 {
+    font-size: 28px;
+    margin: 30px 0 8px 0;
+    text-align: center;
+    color: #9D1F15;
+    background-color: rgba(211, 211, 211, 0.505);
+    padding: 8px;
+}
+.item-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.item {
+    background-color: #9d1e157e;
+    width: 260px;
+    height: 385px;
+    border-radius: 10px;
+    border: 2px solid #9D1F15;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+.item img {
+    width: 260px;
+    height: 240px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 8px;
+}
+.item h5 {
+    text-align: center;
+    color: #FBF7BA;
+    text-shadow: 0 0 5px #fffbc4;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+.item h3, .item p {
+    text-align: center;
+    color: white;
+    line-height: 1.3;
+}
+.item-container button {
+    width: 40%;
+    height: 40px;
+    margin: 15px 0 0 14px;
+    background-color: #9D1F15;
+    border-radius: 100px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+}
+.item-container button:hover {
+    background-color: #FBF7BA;
+    transition: 0.3s;
+    color: #9D1F15;
+}
+.action-btns {
+    display: flex;
+    gap: 8px;
+}
+
+/* Reservations components */
+.orders-container {
+    width: 95%;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.orders-container h2 {
+    font-size: 25px;
+}
+.o-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.o-btns {
+    display: flex;
+    gap: 20px;
+}
+.o-btns button {
+    background-color: #9D1F15;
+    color: #FBF7BA;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.o-btns button:hover {
+    background-color: #c5352b;
+    color: #FBF7BA;
+    transition: 0.5s ease;
+}
+.orders-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px auto;
+    font-size: 18px;
+}
+.orders-container thead {
+    background-color: #9D1F15;
+    color: white;
+}
+.orders-container th {
+    padding: 10px;
+    border: 1.4px solid #FBF7BA;
+}
+.orders-container td {
+    padding: 10px;
+    text-align: center;
+    border: 1.4px solid #9D1F15;
+}
+
+/* Reservations components */
+.reservation-con {
+    width: 95%;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.reservation-con h2 {
+    font-size: 25px;
+}
+.res-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.res-btns {
+    display: flex;
+    gap: 20px;
+}
+.res-btns button {
+    background-color: #9D1F15;
+    color: #FBF7BA;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.res-btns button:hover {
+    background-color: #c5352b;
+    color: #FBF7BA;
+    transition: 0.5s ease;
+}
+.reservation-con table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px auto;
+    font-size: 18px;
+}
+.reservation-con thead {
+    background-color: #9D1F15;
+    color: white;
+}
+.reservation-con th {
+    padding: 10px;
+    border: 1.4px solid #FBF7BA;
+}
+.reservation-con td {
+    padding: 10px;
+    text-align: center;
+    border: 1.4px solid #9D1F15;
+}
+
+/* Reviews components */
+.review-container {
+    width: 95%;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.review-container h2 {
+    font-size: 25px;
+}
+.rev-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-delete {
+    display: flex;
+    gap: 20px;
+}
+.search-delete button:hover {
+    background-color: #c5352b;
+    color: #FBF7BA;
+    transition: 0.5s ease;
+}
+.search-delete button {
+    background-color: #9D1F15;
+    color: #FBF7BA;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.review-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px auto;
+    font-size: 18px;
+}
+.review-container thead {
+    background-color: #9D1F15;
+    color: white;
+}
+.review-container th {
+    padding: 10px;
+    border: 1.4px solid #FBF7BA;
+}
+.review-container td {
+    padding: 10px;
+    text-align: center;
+    border: 1.4px solid #9D1F15;
+}
