@@ -13,6 +13,8 @@ header nav {
     font-size: 24px;
     color: #FBF7BA;
     z-index: 1000;
+    position: fixed;
+    width: 100%;
 }
 .nav-right {
     display: flex;
